@@ -1,0 +1,411 @@
+{% extends 'customer/pizza-gh-pages/base.html' %}
+
+
+{% block content %}
+{% load humanize %}
+
+    <section class="home-slider owl-carousel img" style="background-image: url(../../../static/images/bg_1.jpg);">
+
+      <div class="slider-item" style="background-image: url(../../../static/images/bg_3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Our Menu</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Menu</span></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+W
+
+	<section class="ftco-section">
+
+    <form method="POST">
+        {% csrf_token %}
+
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <h2 class="mb-4">Our Menu</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Beer, Hard Soda and Ciders</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for beer in Beer %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ beer.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ beer.name }}</span></h3>
+	        				<span class="price">{{ beer.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ beer.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ beer.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Soft Drinks</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for drink in Drinks %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ drink.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ drink.name }}</span></h3>
+	        				<span class="price">{{ drink.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ drink.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ drink.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">New York Bagels</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for bagel in Bagel %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ bagel.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ bagel.name }}</span></h3>
+	        				<span class="price">{{ bagel.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ bagel.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ bagel.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Starters</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for side in Sides %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ side.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ side.name }}</span></h3>
+	        				<span class="price">{{ side.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ side.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ side.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Salad</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for salad in Salad %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ salad.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ salad.name }}</span></h3>
+	        				<span class="price">{{ salad.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ salad.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ salad.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Pasta</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for pasta in Pasta %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ pasta.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ pasta.name }}</span></h3>
+	        				<span class="price">{{ pasta.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ pasta.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ pasta.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Breakfast Sandwiches</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for sandwich in Sandwich %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ sandwich.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ sandwich.name }}</span></h3>
+	        				<span class="price">{{ sandwich.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ sandwich.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ sandwich.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Dipping Sauce</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for dip in Dip %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ dip.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ dip.name }}</span></h3>
+	        				<span class="price">{{ dip.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ dip.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ dip.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Pizza</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+          </div>
+        </div>
+        {% for pizza in Pizza %}
+        <div class="row justify-content-center">
+        	<div class="col-md-10">
+        		<div class="pricing-entry d-flex ftco-animate">
+        			<div class="img" style="background-image: url({{ pizza.image.url }});"></div>
+        			<div class="desc pl-3">
+	        			<div class="d-flex text align-items-center">
+	        				<h3><span>{{ pizza.name }}</span></h3>
+	        				<span class="price">{{ pizza.price|intcomma }}</span>
+                            <div class="checkbox-wrapper-50">
+                                <input type="checkbox" class="plus-minus" name="items[]" value="{{ pizza.pk }}">
+                            </div>
+	        			</div>
+	        			<div class="d-block" style="width: 100%;">
+	        				<p>{{ pizza.description }}</p>
+	        			</div>
+        			</div>
+        		</div>
+        	</div>
+        </div>
+        {% endfor %}
+    	</div>
+
+
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-md-7 heading-section ftco-animate text-center">
+                   <h2 class="mb-4">Delivery Informations</h2>
+                </div>
+           </div>
+    	</div>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 ftco-animate">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input required class="form-control" type="text" placeholder="Full Name" name="name"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input required class="form-control" type="email" placeholder="Email Address" name="email"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input required class="form-control" type="text" placeholder="Phone Number" name="phone"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input required class="form-control" type="text" placeholder="Street Address" name="street"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="State" name="state"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Zip Code" name="zip_code"/>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+{#        <div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">#}
+{#            <div class="form-group">#}
+{#                <button class="btn btn-primary py-3 px-5"><span style="font-size: 30px">Place my order!</span></button>#}
+{#            </div>#}
+{#        </div>#}
+
+        <!-- Button trigger modal -->
+        <div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+            <div class="form-group">
+                <button type="button" class="btn btn-primary py-3 px-5" data-toggle="modal" data-target="#submitModal"><span style="font-size: 30px">Place my order!</span></button>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="submitModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="submitModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+              <div class="modal-header">
+                <h5 class="modal-title" id="submitModalLabel">Confirm Your Order?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Go Back</button>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </form>
+    </section>
+
+
+
+{% endblock content %}

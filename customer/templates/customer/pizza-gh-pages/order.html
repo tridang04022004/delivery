@@ -52,7 +52,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ beer.name }}</span></h3>
-	        				<span class="price">{{ beer.price|intcomma }}</span>
+	        				<span class="price">${{ beer.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ beer.pk }}">
                             </div>
@@ -83,7 +83,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ drink.name }}</span></h3>
-	        				<span class="price">{{ drink.price|intcomma }}</span>
+	        				<span class="price">${{ drink.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ drink.pk }}">
                             </div>
@@ -114,7 +114,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ bagel.name }}</span></h3>
-	        				<span class="price">{{ bagel.price|intcomma }}</span>
+	        				<span class="price">${{ bagel.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ bagel.pk }}">
                             </div>
@@ -145,7 +145,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ side.name }}</span></h3>
-	        				<span class="price">{{ side.price|intcomma }}</span>
+	        				<span class="price">${{ side.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ side.pk }}">
                             </div>
@@ -176,7 +176,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ salad.name }}</span></h3>
-	        				<span class="price">{{ salad.price|intcomma }}</span>
+	        				<span class="price">${{ salad.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ salad.pk }}">
                             </div>
@@ -207,7 +207,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ pasta.name }}</span></h3>
-	        				<span class="price">{{ pasta.price|intcomma }}</span>
+	        				<span class="price">${{ pasta.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ pasta.pk }}">
                             </div>
@@ -238,7 +238,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ sandwich.name }}</span></h3>
-	        				<span class="price">{{ sandwich.price|intcomma }}</span>
+	        				<span class="price">${{ sandwich.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ sandwich.pk }}">
                             </div>
@@ -269,7 +269,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ dip.name }}</span></h3>
-	        				<span class="price">{{ dip.price|intcomma }}</span>
+	        				<span class="price">${{ dip.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ dip.pk }}">
                             </div>
@@ -300,7 +300,7 @@ W
         			<div class="desc pl-3">
 	        			<div class="d-flex text align-items-center">
 	        				<h3><span>{{ pizza.name }}</span></h3>
-	        				<span class="price">{{ pizza.price|intcomma }}</span>
+	        				<span class="price">${{ pizza.price|intcomma }}</span>
                             <div class="checkbox-wrapper-50">
                                 <input type="checkbox" class="plus-minus" name="items[]" value="{{ pizza.pk }}">
                             </div>
@@ -319,7 +319,7 @@ W
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
-                   <h2 class="mb-4">Delivery Informations</h2>
+                   <h2 class="mb-4">Delivery Information</h2>
                 </div>
            </div>
     	</div>
